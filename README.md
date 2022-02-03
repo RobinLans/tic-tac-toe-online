@@ -9,6 +9,7 @@ This project is based off these [requirements](https://github.com/rickywid/app-i
 ## Demo
 
 [Netlify Link](https://loving-goodall-298aab.netlify.app/)
+
 [Server Repo](https://github.com/RobinLans/tic-tac-toe-server)
 
 ## Dependencies
