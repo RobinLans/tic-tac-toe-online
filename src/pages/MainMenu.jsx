@@ -15,7 +15,7 @@ function MainMenu() {
     console.log(socketCtx);
 
     return (
-        <div className="w-[30rem] h-full flex justify-between  ">
+        <div className="w-[30rem] h-full flex justify-between mt-14">
             <div className="flex flex-col items-center">
                 <button
                     onClick={() => {

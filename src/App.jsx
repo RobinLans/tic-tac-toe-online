@@ -31,7 +31,7 @@ function App() {
 
     return (
         <div className="bg-bg bg-cover font-gloria w-screen h-screen flex flex-col items-center">
-            <img src={logo} alt="logo" className="h-40 mt-4 mb-16" />
+            <img src={logo} alt="logo" className="h-28 2xl:h-40 mt-4 mb-4" />
             <Routes>
                 {/* <Route path="/" element={<NameInput />} /> */}
                 <Route path="/" element={<MainMenu />} />
