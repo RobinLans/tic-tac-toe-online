@@ -6,15 +6,18 @@ import {
     linkVariant1,
     linkVariant2,
 } from "../animation/motion";
+import useSound from "use-sound";
+import mouthClick from "../assets/mouthClick.wav";
 
 //Images
 import singleMenu from "../assets/singleUnder.png";
 import multiMenu from "../assets/multiUnder.png";
-import play from "../assets/play.png";
+import playText from "../assets/play.png";
 import create from "../assets/createtest.png";
 import join from "../assets/join.png";
 
 function MainMenu() {
+    const [play] = useSound(mouthClick);
     const [showSingleOption, setShowSingleOption] = useState(false);
     const [showMultiOptions, setShowMultiOptions] = useState(false);
 
@@ -29,6 +32,7 @@ function MainMenu() {
             <div className="flex flex-col items-center">
                 <button
                     onClick={() => {
+                        play();
                         setShowSingleOption(!showSingleOption);
                         setShowMultiOptions(false);
                     }}
@@ -46,10 +50,11 @@ function MainMenu() {
                             initial="hidden"
                             animate="visible"
                             exit="exit"
+                            onClick={play}
                         >
                             <Link to="/single-player">
                                 <img
-                                    src={play}
+                                    src={playText}
                                     alt="play"
                                     className="h-14 w-full mt-2"
                                 />
@@ -61,6 +66,7 @@ function MainMenu() {
             <div className="flex flex-col items-center">
                 <button
                     onClick={() => {
+                        play();
                         setShowMultiOptions(!showMultiOptions);
                         setShowSingleOption(false);
                     }}
@@ -79,6 +85,7 @@ function MainMenu() {
                                 initial="hidden"
                                 animate="visible"
                                 exit="exit"
+                                onClick={play}
                             >
                                 <Link to="/multi-player/create">
                                     <img
@@ -93,6 +100,7 @@ function MainMenu() {
                                 initial="hidden"
                                 animate="visible"
                                 exit="exit"
+                                onClick={play}
                             >
                                 <Link to="/multi-player/join">
                                     <img

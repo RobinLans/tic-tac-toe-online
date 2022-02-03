@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState } from "react";
 import { context } from "../context/Context";
 import { motion } from "framer-motion";
 import { containerVariants } from "../animation/motion";
+import useSound from "use-sound";
+import click from "../assets/btnClick.wav";
 
 //Images
 import player1 from "../assets/player1.png";
@@ -13,6 +15,7 @@ import again from "../assets/again.png";
 import Board from "./Board";
 
 function Game({ multiPlayer = false }) {
+    const [play] = useSound(click);
     const { winner, setWinner, setShowModal, createdRoom, whichPlayer } =
         useContext(context);
     const [renderBoard, setRenderBoard] = useState(true);
@@ -22,6 +25,7 @@ function Game({ multiPlayer = false }) {
     }, []);
 
     function resetGame() {
+        play();
         setRenderBoard(false);
         setTimeout(() => {
             setRenderBoard(true);

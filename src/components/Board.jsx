@@ -1,6 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import { context } from "../context/Context";
 import { checkIfWin } from "../utils/checkForWinner";
+import useSound from "use-sound";
+import click from "../assets/btnClick2.wav";
 
 //Images
 import board from "../assets/board.png";
@@ -12,6 +14,7 @@ import o2 from "../assets/o2.png";
 import o3 from "../assets/o3.png";
 
 function Board({ multiPlayer = false }) {
+    const [play] = useSound(click);
     const [playerOnePicks, setPlayerOnePicks] = useState([]);
     const [playerTwoPicks, setPlayerTwoPicks] = useState([]);
     const {
@@ -109,6 +112,7 @@ function Board({ multiPlayer = false }) {
                 id="1"
                 className="w-24 h-24 absolute top-9 left-14"
                 onClick={(e) => {
+                    play();
                     if (isMyTurn || !multiPlayer) makeAPick(e, whichPlayer);
                 }}
             >
@@ -119,6 +123,7 @@ function Board({ multiPlayer = false }) {
                 id="2"
                 className="w-24 h-24 absolute top-9 left-[200px]"
                 onClick={(e) => {
+                    play();
                     if (isMyTurn || !multiPlayer) makeAPick(e, whichPlayer);
                 }}
             >
@@ -129,6 +134,7 @@ function Board({ multiPlayer = false }) {
                 id="3"
                 className="w-24 h-24 absolute top-9 left-[342px]"
                 onClick={(e) => {
+                    play();
                     if (isMyTurn || !multiPlayer) makeAPick(e, whichPlayer);
                 }}
             >
@@ -139,6 +145,7 @@ function Board({ multiPlayer = false }) {
                 id="4"
                 className="w-24 h-24 absolute top-[175px] left-12"
                 onClick={(e) => {
+                    play();
                     if (isMyTurn || !multiPlayer) makeAPick(e, whichPlayer);
                 }}
             >
@@ -149,6 +156,7 @@ function Board({ multiPlayer = false }) {
                 id="5"
                 className="w-24 h-24 absolute top-[175px] left-[198px]"
                 onClick={(e) => {
+                    play();
                     if (isMyTurn || !multiPlayer) makeAPick(e, whichPlayer);
                 }}
             >
@@ -159,6 +167,7 @@ function Board({ multiPlayer = false }) {
                 id="6"
                 className="w-24 h-24 absolute top-[170px] left-[340px]"
                 onClick={(e) => {
+                    play();
                     if (isMyTurn || !multiPlayer) makeAPick(e, whichPlayer);
                 }}
             >
@@ -169,6 +178,7 @@ function Board({ multiPlayer = false }) {
                 id="7"
                 className="w-24 h-24 absolute top-[310px] left-10"
                 onClick={(e) => {
+                    play();
                     if (isMyTurn || !multiPlayer) makeAPick(e, whichPlayer);
                 }}
             >
@@ -179,6 +189,7 @@ function Board({ multiPlayer = false }) {
                 id="8"
                 className="w-24 h-20 absolute top-[310px] left-[190px]"
                 onClick={(e) => {
+                    play();
                     if (isMyTurn || !multiPlayer) makeAPick(e, whichPlayer);
                 }}
             >
@@ -189,6 +200,7 @@ function Board({ multiPlayer = false }) {
                 id="9"
                 className="w-24 h-[90px] absolute top-[300px] left-[340px]"
                 onClick={(e) => {
+                    play();
                     if (isMyTurn || !multiPlayer) makeAPick(e, whichPlayer);
                 }}
             >
