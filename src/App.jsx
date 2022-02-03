@@ -12,7 +12,7 @@ import Modal from "./components/Modal";
 
 const socket = io.connect(
     // "https://ttt-dj-server.herokuapp.com/"
-    "http://localhost:4000/"
+    "http://localhost:8000/"
 );
 
 function App() {
