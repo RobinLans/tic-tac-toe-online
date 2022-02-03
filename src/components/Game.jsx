@@ -1,10 +1,16 @@
 import React, { useContext, useEffect, useState } from "react";
+import { context } from "../context/Context";
+import { motion } from "framer-motion";
+import { containerVariants } from "../animation/motion";
+
+//Images
 import player1 from "../assets/player1.png";
 import player2 from "../assets/player2.png";
 import winnerText from "../assets/winner.png";
 import again from "../assets/again.png";
+
+//Components
 import Board from "./Board";
-import { context } from "../context/Context";
 
 function Game({ multiPlayer = false }) {
     const { winner, setWinner, setShowModal, createdRoom, whichPlayer } =
@@ -25,7 +31,12 @@ function Game({ multiPlayer = false }) {
     }
 
     return (
-        <div className="flex flex-col items-center">
+        <motion.div
+            className="flex flex-col items-center"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+        >
             <div className="flex h-auto w-[55rem] justify-between">
                 <div className="w-44 flex flex-col items-center">
                     <img
@@ -66,7 +77,7 @@ function Game({ multiPlayer = false }) {
                     <img src={again} alt="again" className="h-12" />
                 </button>
             )}
-        </div>
+        </motion.div>
     );
 }
 

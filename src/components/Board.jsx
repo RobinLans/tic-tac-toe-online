@@ -1,4 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
+import { context } from "../context/Context";
+import { checkIfWin } from "../utils/checkForWinner";
+
+//Images
 import board from "../assets/board.png";
 import x1 from "../assets/x1.png";
 import x2 from "../assets/x2.png";
@@ -6,8 +10,6 @@ import x3 from "../assets/x3.png";
 import o1 from "../assets/o1.png";
 import o2 from "../assets/o2.png";
 import o3 from "../assets/o3.png";
-import { context } from "../context/Context";
-import { checkIfWin } from "../utils/checkForWinner";
 
 function Board({ multiPlayer = false }) {
     const [playerOnePicks, setPlayerOnePicks] = useState([]);

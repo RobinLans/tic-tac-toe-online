@@ -1,9 +1,13 @@
 import React, { useContext, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { context } from "../context/Context";
+import { motion } from "framer-motion";
+import { containerVariants } from "../animation/motion";
+
+//images
 import createRoomText from "../assets/createtest.png";
 import joinRoomText from "../assets/join.png";
 import next from "../assets/next.png";
-import { context } from "../context/Context";
 
 function CreateOrJoin() {
     const { params } = useParams();
@@ -36,7 +40,13 @@ function CreateOrJoin() {
         }
     }
     return (
-        <div className="w-full flex flex-col items-center mt-14">
+        <motion.div
+            className="w-full flex flex-col items-center mt-14"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+        >
             <img
                 src={params === "create" ? createRoomText : joinRoomText}
                 alt="text"
@@ -54,7 +64,7 @@ function CreateOrJoin() {
             >
                 <img src={next} alt="next" className="h-8" />
             </button>
-        </div>
+        </motion.div>
     );
 }
 
