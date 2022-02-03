@@ -101,7 +101,7 @@ function Board({ multiPlayer = false }) {
     }, [socketCtx.socket]);
 
     return (
-        <div className=" w-[30rem] h-[30rem] relative">
+        <div className=" w-[30rem] h-[28.5rem] relative">
             <img src={board} alt="board" className="w-full absolute" />
             <div
                 id="1"
