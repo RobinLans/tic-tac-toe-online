@@ -36,7 +36,7 @@ function CreateOrJoin() {
         }
     }
     return (
-        <div className="w-full flex flex-col items-center">
+        <div className="w-full flex flex-col items-center mt-14">
             <img
                 src={params === "create" ? createRoomText : joinRoomText}
                 alt="text"
