@@ -10,7 +10,6 @@
     [3,5,7]*/
 
 export function checkIfWin(playerArr) {
-    console.log("bajs", playerArr);
     if (
         playerArr.includes("1") &&
         playerArr.includes("2") &&
@@ -59,5 +58,6 @@ export function checkIfWin(playerArr) {
         playerArr.includes("7")
     )
         return true;
+
     return false;
 }

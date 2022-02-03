@@ -1,14 +1,18 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import singleMenu from "../assets/singleUnder.png";
 import multiMenu from "../assets/multiUnder.png";
 import play from "../assets/play.png";
 import create from "../assets/createtest.png";
 import join from "../assets/join.png";
+import { context } from "../context/Context";
 
 function MainMenu() {
     const [showSingleOption, setShowSingleOption] = useState(false);
     const [showMultiOptions, setShowMultiOptions] = useState(false);
+    const { socketCtx } = useContext(context);
+
+    console.log(socketCtx);
 
     return (
         <div className="w-[30rem] h-full flex justify-between  ">
@@ -53,7 +57,7 @@ function MainMenu() {
                 {showMultiOptions && (
                     <>
                         <button>
-                            <Link to="/create-room">
+                            <Link to="/multi-player/create">
                                 <img
                                     src={create}
                                     alt="create"
@@ -62,7 +66,7 @@ function MainMenu() {
                             </Link>
                         </button>
                         <button>
-                            <Link to="/join">
+                            <Link to="/multi-player/join">
                                 <img
                                     src={join}
                                     alt="join"

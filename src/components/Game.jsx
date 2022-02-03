@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import player1 from "../assets/player1.png";
 import player2 from "../assets/player2.png";
 import winnerText from "../assets/winner.png";
@@ -6,9 +6,14 @@ import again from "../assets/again.png";
 import Board from "./Board";
 import { context } from "../context/Context";
 
-function Game() {
-    const { winner, setWinner } = useContext(context);
+function Game({ multiPlayer = false }) {
+    const { winner, setWinner, setShowModal, createdRoom, whichPlayer } =
+        useContext(context);
     const [renderBoard, setRenderBoard] = useState(true);
+
+    useEffect(() => {
+        if (createdRoom && multiPlayer) setShowModal(true);
+    }, []);
 
     function resetGame() {
         setRenderBoard(false);
@@ -23,16 +28,32 @@ function Game() {
         <div className="flex flex-col items-center">
             <div className="flex h-auto w-[55rem] justify-between">
                 <div className="w-44 flex flex-col items-center">
-                    <img src={player1} alt="player1" className="w-24" />
+                    <img
+                        src={player1}
+                        alt="player1"
+                        className={`${
+                            whichPlayer === "playerOne" && winner === ""
+                                ? "w-32 animate-bounce"
+                                : "w-24"
+                        }`}
+                    />
                     {winner === "playerOne" ? (
                         <img src={winnerText} alt="" className="w-32 mt-4" />
                     ) : (
                         <></>
                     )}
                 </div>
-                {renderBoard && <Board />}
+                {renderBoard && <Board multiPlayer={multiPlayer} />}
                 <div className="w-44 flex flex-col items-center">
-                    <img src={player2} alt="player2" className="w-24" />
+                    <img
+                        src={player2}
+                        alt="player2"
+                        className={`${
+                            whichPlayer === "playerTwo" && winner === ""
+                                ? "w-32 animate-bounce"
+                                : "w-24"
+                        }`}
+                    />
                     {winner === "playerTwo" ? (
                         <img src={winnerText} alt="" className="w-32 mt-4" />
                     ) : (
