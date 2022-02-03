@@ -1,4 +1,4 @@
-## Recipe App
+## Tic Tac Toe
 
 For this project the idea was to create a Tic Tac Toe game where you could not only play offline but also against someone else online.
 
