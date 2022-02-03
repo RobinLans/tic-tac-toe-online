@@ -10,10 +10,7 @@ import { context } from "./context/Context";
 import MultiPlayer from "./pages/MultiPlayerGame";
 import Modal from "./components/Modal";
 
-const socket = io.connect(
-    // "https://ttt-dj-server.herokuapp.com/"
-    "http://localhost:8000/"
-);
+const socket = io.connect("https://ttt-dj-server.herokuapp.com/");
 
 function App() {
     const {
