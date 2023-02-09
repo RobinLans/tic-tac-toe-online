@@ -1,6 +1,6 @@
 ## Tic Tac Toe
 
-For this project the idea was to create a Tic Tac Toe game where you could not only play offline but also against someone else online. People have asked if the app is handdrawn, yes it is, I drew everytinh on a drawing tablet in Ilustrator 
+For this project the idea was to create a Tic Tac Toe game where you could not only play offline but also against someone else online. People have asked if the app is handdrawn, yes it is, I drew everything on a drawing tablet in Ilustrator 
 
 To make the app real-time I used web-sockets and more specifically [socket.io](https://socket.io/) which is probably the most used web-socket library.
 
